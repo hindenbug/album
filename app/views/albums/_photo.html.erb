@@ -1,0 +1,14 @@
+
+  <label>Image Path : </label>
+  <%= form.file_field :image %><br/><br/>
+  
+  <label>Image Caption : </label>
+  <%= form.text_field :title %><br/><br/>
+  
+  <label>Description : </label><br/>
+  <%= form.text_area :description,:cols => "80",:rows => '6' %><br/><br/>
+  
+  <label>Tags : <label><br/>
+  <%= form.text_field :tag_list %>
+  
+  <%= link_to "Cancel","#",:onclick => "remove_add_pic();" %>

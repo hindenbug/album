@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+       <title>Webalbum</title>
+       <%= stylesheet_link_tag 'styles','lightbox'%>
+       <%= javascript_include_tag 'jquery.min','rails','application','lightbox' %>
+
+       <%= csrf_meta_tag %>
+
+  </head>
+
+  <body>
+      <section id="page">
+           <header> 
+                <br/><br/>
+                <hgroup>
+                    <h1>Album</h1>
+                </hgroup>
+                
+                <div style="float:right;">
+                   <% if user_signed_in? %>
+                      Welcome ,<b><%= current_user.email %></b> |
+                                <%= link_to 'Sign Out',destroy_user_session_path %> 
+                   <% end %>
+                </div>
+            </header>
+            <br/><br/>
+                 <nav class="clear" style="float :right;"> 
+                    <% if user_signed_in? %>    
+                      <ul>
+                         <li><%= link_to 'Albums',albums_path %></li>
+                      </ul>
+                    <% end %>
+                </nav>
+
+         <section id="articles">
+           
+                      
+            <div id="container">
+              <% if flash[:notice] %>
+               <div class="flash">
+                <div class="notice"><%= flash[:notice] %></div>
+               </div>
+              <% end %>
+              <br/><br/>
+                  <%= yield :content %>
+            </div>
+
+
+         </section>
+
+
+
+
+  </body>
+</html>

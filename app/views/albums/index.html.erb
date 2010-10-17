@@ -1,0 +1,33 @@
+<% content_for :content do %>
+  
+  <h2>Album List</h2>
+  <br/>
+  <hr/>
+  <br/><br/>
+  <span style="float :right;"><%= link_to 'Add Album', new_album_path %></span>
+  <br/><br/>
+  
+    <% if !current_user.albums == nil && current_user.albums.empty? %>
+        You Do Not Have Any Albums Yet.
+      <%= link_to "Click To Create Album",new_album_path %>
+    <% else %>
+     
+    <ul style="list-style: none;">
+      <% @albums.each do |album| %>
+        <li style="height: 250px; width: 250px;float: left; padding: 20px;">
+           <div style="float:left;"><b><%= album.album_name %></b></div>
+            <div style="float:right;"><%= link_to 'Show', album %> | <%= link_to 'Edit', edit_album_path(album) %> |
+              <%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %> </div>
+       
+          <br/><br/>
+          <%= image_tag(album.photos.first.image.url(:medium)) %>
+          <br/><br/>
+          <div>
+            <%= album.album_description %><br/><br/>
+          </div>
+        </li>
+    <% end %>
+    <% end %>  
+        <br />
+  
+  <% end %>

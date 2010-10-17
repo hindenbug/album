@@ -1,0 +1,23 @@
+
+
+Welcome back,<%= current_user.email %>
+
+<br/><br/>
+
+<% if current_user.albums.empty? %>
+
+  You Have 0 Albums.
+  <br/><br/>
+  
+  <%= link_to "Create a New Album", new_album_path %>
+  
+<% else %>
+
+  You Have <%= current_user.albums.count %> Albums.
+  <br/><br/>
+  Click on Albums to View/Edit them.
+  <br/><br/>
+  
+  Want to <%= link_to "Create a New Album" , new_album_path %>
+  
+ <% end %>

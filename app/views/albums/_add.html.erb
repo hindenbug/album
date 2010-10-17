@@ -1,0 +1,9 @@
+ <% form_for @album,:html => { :multipart => true } do |f| %>
+    
+      <%= f.fields_for :photos,[@album.photos.build] do |p| %>
+        <%= render :partial => 'photo',:locals => {:form => p } %>
+      <% end %>
+      <br/><br/>  
+     <%= f.submit %>
+    
+ <% end %>

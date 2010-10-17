@@ -1,0 +1,10 @@
+<% content_for :content do %>
+  <h2>New album<h2>
+  <br/>
+  <hr/>
+  <br/><br/>
+  <span style="float :right;"><%= link_to 'Back', albums_path %></span>
+  <br/><br/>
+  <%= render 'form', :object => @album %>
+  
+ <% end %>

@@ -1,0 +1,14 @@
+<% content_for :content do %>
+      
+  <div>
+     <% if !user_signed_in? %>
+         WELCOME TO THE ALBUM APPLICATION 
+        <br/><br/>
+        <b> Click Here to <%= link_to "Login" , new_user_session_path %> </b>
+     <% else %>
+        
+        <%=  render "landing_page" %>  
+     <% end %>
+  </div>
+    
+<% end %>

@@ -1,0 +1,65 @@
+*{
+	/* Universal reset: */
+	margin:0;
+	padding:0;
+}
+
+header,footer,
+div,section,
+hgroup,nav,
+figure{
+	/* Giving a display value to the HTML5 rendered elements: */
+	display:block;
+}
+
+body{
+	/* Setting the default text color, size, page background and a font stack: */
+	font-size:0.825em;
+	color:#fcfcfc;
+	background-color:#355664;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
+nav{
+	background:url(img/gradient_light.jpg) repeat-x 50% 50% #f8f8f8;
+	padding:0 5px;
+	position:absolute;
+	right:0;
+	top:7em;
+	
+	border:1px solid #FCFCFC;
+
+	-moz-box-shadow:0 1px 1px #333333;
+	-webkit-box-shadow:0 1px 1px #333333;
+	box-shadow:0 1px 1px #333333;
+}
+
+
+/* The navigation styling: */
+
+nav ul li{
+	display:inline;
+}
+
+
+#page{
+	width:1024px;
+	margin:0 auto;
+	position:relative;
+}
+
+
+div#container{
+	background-color:#213E4A;
+	margin:3em 0;
+	padding:20px;
+	height: auto;
+	text-shadow:0 2px 0 black;
+}
+
+ .tag1 { font-size: 1.0em; }
+  .tag2 { font-size: 1.6em; }
+  .tag3 { font-size: 2.7em; }
+  .tag4 { font-size: 3.8em; }

@@ -1,0 +1,28 @@
+<% content_for :content do %>
+
+  <h2>Editing <%= @album.album_name %></h2>
+  <br/>
+  <hr/>
+  <br/><br/>
+  <span style="float :right;"><%= link_to 'Show', @album %> &nbsp; &nbsp;<%= link_to 'Back', albums_path %></span>
+  <br/><br/>
+  <%= render 'form', :object => @album %>
+  <br/><br/>
+  <hr/><br/><br/>
+  <%= form_for(@album) do |f| %>
+  
+    <% if @album.photos.empty? %>
+      There are no Photos present.
+    <% else %> 
+      <% @album.photos.each do | photo | %>
+         <%= image_tag(photo.image.url(:thumb), :alt => '') %>
+         <%= check_box_tag "photo_ids[]",photo.id %>
+      <% end %>
+    <% end %>
+    <br/><br/>
+    
+     <%= f.submit "Remove Selected Items" %>
+   <% end %>
+ 
+  
+<% end%>
