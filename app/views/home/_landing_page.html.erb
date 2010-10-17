@@ -1,19 +1,19 @@
 
 
-Welcome back,<%= current_user.email %>
+<h2> Welcome back,<%= current_user.email %></h2>
 
 <br/><br/>
 
 <% if current_user.albums.empty? %>
 
-  You Have 0 Albums.
+  <i>You Have 0 Albums.</i>
   <br/><br/>
   
   <%= link_to "Create a New Album", new_album_path %>
   
 <% else %>
 
-  You Have <%= current_user.albums.count %> Albums.
+  <i>You Have <%= current_user.albums.count %> Albums.</i>
   <br/><br/>
   Click on Albums to View/Edit them.
   <br/><br/>

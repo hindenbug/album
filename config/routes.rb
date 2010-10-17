@@ -1,5 +1,6 @@
 AlbumApp::Application.routes.draw do
   
+  get "home/index"
     
   resources :albums do 
     resources :photos

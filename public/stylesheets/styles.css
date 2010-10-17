@@ -17,23 +17,21 @@ body{
 	font-size:0.825em;
 	color:#fcfcfc;
 	background-color:#355664;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family: "Comic Sans MS", Helvetica, sans-serif;
 }
 
 
 
 nav{
-	background:url(img/gradient_light.jpg) repeat-x 50% 50% #f8f8f8;
-	padding:0 5px;
+	//background:url(img/gradient_light.jpg) repeat-x 50% 50% #f8f8f8;
+	padding:0 10px 0 10px;
 	position:absolute;
-	right:0;
-	top:7em;
-	
-	border:1px solid #FCFCFC;
+	width : 100%;
+	top:6em;
+	font-size: 18px;
+	//border:1px solid #FCFCFC;
 
-	-moz-box-shadow:0 1px 1px #333333;
-	-webkit-box-shadow:0 1px 1px #333333;
-	box-shadow:0 1px 1px #333333;
+	
 }
 
 

@@ -19,7 +19,6 @@
                 <hgroup>
                     <h1>Album</h1>
                 </hgroup>
-                
                 <div style="float:right;">
                    <% if user_signed_in? %>
                       Welcome ,<b><%= current_user.email %></b> |
@@ -28,17 +27,17 @@
                 </div>
             </header>
             <br/><br/>
-                 <nav class="clear" style="float :right;"> 
+              <nav class="clear" style="float :left;"> 
                     <% if user_signed_in? %>    
                       <ul>
-                         <li><%= link_to 'Albums',albums_path %></li>
+                         <li style="padding-right: 10px;"><%= link_to 'Home', root_url %></li>
+                         <li style="padding-right: 10px;"><%= link_to 'Albums',albums_path %></li>
                       </ul>
                     <% end %>
-                </nav>
+                </nav>    
 
-         <section id="articles">
-           
-                      
+        <section id="articles">
+          
             <div id="container">
               <% if flash[:notice] %>
                <div class="flash">
@@ -46,9 +45,9 @@
                </div>
               <% end %>
               <br/><br/>
-                  <%= yield :content %>
+               <%= yield :content %>
             </div>
-
+        </section>
 
          </section>
 
