@@ -1,4 +1,6 @@
 <% content_for :content do %>
+  <%= will_paginate @photos ,:style => "float: right;" %>
+
   <h2><%= @album.album_name %></h2><br/>
   <hr/><br/><br/>
    
@@ -12,7 +14,7 @@
   <% else %>
    <div id="gallery">
        <ul style="list-style:none;">
-          <% @album.photos.each do | photo | %>
+          <% @photos.each do | photo | %>
               <li style="float: left;padding: 20px;"><%= link_to image_tag(photo.image.url(:medium)),photo.image.url %></li>
            <% end %>
        </ul>

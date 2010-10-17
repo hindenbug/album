@@ -1,9 +1,10 @@
 
 
-<h2> Welcome back,<%= current_user.email %></h2>
+<span style="float: left;"><h2> Welcome back,<%= current_user.email %></h2></span><span style="float: right"> Want to <%= link_to "Create a New Album" , new_album_path %></span>
 
 <br/><br/>
-
+<hr/>
+<br/><br/>
 <% if current_user.albums.empty? %>
 
   <i>You Have 0 Albums.</i>
@@ -17,7 +18,19 @@
   <br/><br/>
   Click on Albums to View/Edit them.
   <br/><br/>
+  <br/><br/>
   
-  Want to <%= link_to "Create a New Album" , new_album_path %>
+<% end %>
+<hr/>
+<br/><br/>
+
+<% if @tags.empty? %>
+    No Tags
+    <% else %>
+     Tags:
+     <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+        <%= link_to tag,'#', :class => css_class %>
+      <% end %>
+     <% end %> 
+  <br/><br/>
   
- <% end %>

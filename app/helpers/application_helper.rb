@@ -1,5 +1,6 @@
 module ApplicationHelper
   
-include ActsAsTaggableOn::TagsHelper
+  include ActsAsTaggableOn::TagsHelper
+  
 
 end

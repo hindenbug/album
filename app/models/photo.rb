@@ -1,5 +1,7 @@
 class Photo < ActiveRecord::Base
   
+   cattr_reader :per_page
+
   belongs_to :album
   acts_as_taggable_on :tags
  # belongs_to :user

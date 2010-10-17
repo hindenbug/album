@@ -5,7 +5,9 @@ class AlbumsController < ApplicationController
   
     
   def index
-    @albums = Album.all
+    
+    
+    @albums = Album.paginate(:all,:page => params[:page])
     
     respond_with(@albums)
      
@@ -13,7 +15,7 @@ class AlbumsController < ApplicationController
 
   
   def show
-    @album = Album.find(params[:id])
+    @photos = @album.photos.paginate(:all,:page => params[:page],:per_page => 6)
     respond_with(@album)
       
   end
@@ -46,8 +48,7 @@ class AlbumsController < ApplicationController
 
   
   def update
-    @album = Album.find(params[:id])
-    
+       
     respond_to do |format|
       if @album.update_attributes(params[:album])
         format.html { redirect_to(@album, :notice => 'Album was successfully updated.') }
@@ -68,14 +69,12 @@ class AlbumsController < ApplicationController
     end
   end
   
-  def tag_cloud
-    @tags = @album.photos.tag_counts_on(:tags)
-
-  end
+ 
   
   private
   
   def load
+    
     @album = Album.find(params[:id])
   end
   
