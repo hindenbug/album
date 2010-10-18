@@ -7,14 +7,7 @@
   <br/><br/>
   <span style="float :right;"><%= link_to 'Add Album', new_album_path %></span>
   <br/><br/>
-  <% if @tags.empty? %>
-    No Tags
-    <% else %>
-     Tags:
-     <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-        <%= link_to tag,'#', :class => css_class %>
-      <% end %>
-     <% end %> 
+  
   <br/><br/>
     <% if !current_user.albums == nil && current_user.albums.empty? %>
         You Do Not Have Any Albums Yet.

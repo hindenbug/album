@@ -6,7 +6,9 @@
   <br/><br/>
   <span style="float :right;"><%= link_to 'Show', @album %> &nbsp; &nbsp;<%= link_to 'Back', albums_path %></span>
   <br/><br/>
-  <%= render 'form', :object => @album %>
+  <%= link_to "Click to Add Photos","#",:onclick => "add_pic();" %>
+  <br/><br/>
+  <%#= render 'form', :object => @album %>
   <br/><br/>
   <hr/><br/><br/>
   <%= form_for(@album) do |f| %>
@@ -24,5 +26,11 @@
      <%= f.submit "Remove Selected Items" %>
    <% end %>
  
+  
+
+  <div id="add_ph" style="display:none;z-index:1000;border: 1px solid;padding:56px;top:200px;width: 600px;height:auto;position: absolute;background: black;" %>
+      <%= render "add",:object => @album %>
+  </div>
+
   
 <% end%>

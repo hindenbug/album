@@ -7,4 +7,7 @@ class Album < ActiveRecord::Base
   
   accepts_nested_attributes_for :photos
   
+  validates :album_name ,:presence => true
+  
+  
 end

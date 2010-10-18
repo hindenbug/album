@@ -35,20 +35,17 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.create(params[:album])
    
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to(@album, :notice => 'Album was successfully created.') }
-        format.xml  { render :xml => @album, :status => :created, :location => @album }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @album.errors, :status => :unprocessable_entity }
-      end
+    if @album.save
+      flash[:notice] = "Album Created Successfully"
     end
+    respond_with(@album)
   end
 
   
   def update
-       
+    unless params[:photo_ids].empty?
+       Photo.destroy_pics(params[:id], params[:photo_ids])
+    end   
     respond_to do |format|
       if @album.update_attributes(params[:album])
         format.html { redirect_to(@album, :notice => 'Album was successfully updated.') }
